@@ -22,10 +22,32 @@ const routes = [
     name: "search",
     component: () => import("../pages/SearchPage.vue"),
   },
-  {
-    path: "/recipe/:recipeId",
+  
+  // {
+  //   path: "/recipe/:recipeId",
+  //   name: "recipe",
+  //   component: () => import("../pages/RecipeViewPage.vue"),
+  // },
+    {
+    path: "/recipe/:recipeId/:source",
     name: "recipe",
     component: () => import("../pages/RecipeViewPage.vue"),
+  },
+
+  {
+    path: '/favorites',
+    name: 'Favorites',
+    component: () => import('../pages/FavoriteRecipesPage.vue'), // Fixed: changed from @/views to ../pages
+  },
+  {
+    path: '/my-recipes',
+    name: 'MyRecipes',
+    component: () => import('../pages/MyRecipesPage.vue'), // Fixed: changed from @/views to ../pages
+  },
+  {
+    path: '/family-recipes',
+    name: 'FamilyRecipes',
+    component: () => import('../pages/FamilyRecipesPage.vue'), // Fixed: changed from @/views to ../pages
   },
   {
     path: "/:catchAll(.*)",
